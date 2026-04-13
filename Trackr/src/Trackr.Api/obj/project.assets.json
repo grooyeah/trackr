@@ -420,7 +420,7 @@
           "Microsoft.EntityFrameworkCore.Analyzers": "10.0.5"
         },
         "compile": {
-          "lib/net10.0/_._": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.dll": {
             "related": ".xml"
           }
         },
@@ -436,7 +436,7 @@
       "Microsoft.EntityFrameworkCore.Abstractions/10.0.5": {
         "type": "package",
         "compile": {
-          "lib/net10.0/_._": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
             "related": ".xml"
           }
         },
@@ -482,7 +482,7 @@
           "Microsoft.EntityFrameworkCore": "10.0.5"
         },
         "compile": {
-          "lib/net10.0/_._": {
+          "lib/net10.0/Microsoft.EntityFrameworkCore.Relational.dll": {
             "related": ".xml"
           }
         },
@@ -574,6 +574,53 @@
             "related": ".xml"
           }
         }
+      },
+      "Npgsql/10.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Npgsql.EntityFrameworkCore.PostgreSQL/10.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "[10.0.4, 11.0.0)",
+          "Microsoft.EntityFrameworkCore.Relational": "[10.0.4, 11.0.0)",
+          "Npgsql": "10.0.2"
+        },
+        "compile": {
+          "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Scalar.AspNetCore/2.13.22": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "System.CodeDom/6.0.0": {
         "type": "package",
@@ -722,6 +769,22 @@
         },
         "runtime": {
           "bin/placeholder/Trackr.Domain.dll": {}
+        }
+      },
+      "Trackr.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "10.0.5",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.1",
+          "Trackr.Application": "1.0.0",
+          "Trackr.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Trackr.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Trackr.Infrastructure.dll": {}
         }
       }
     }
@@ -2106,6 +2169,59 @@
         "packageIcon.png"
       ]
     },
+    "Npgsql/10.0.2": {
+      "sha512": "q5RfBI+wywJSFUNDE1L4ZbHEHCFTblo8Uf6A6oe4feOUFYiUQXyAf9GBh5qEZpvJaHiEbpBPkQumjEhXCJxdrg==",
+      "type": "package",
+      "path": "npgsql/10.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/Npgsql.dll",
+        "lib/net10.0/Npgsql.xml",
+        "lib/net8.0/Npgsql.dll",
+        "lib/net8.0/Npgsql.xml",
+        "lib/net9.0/Npgsql.dll",
+        "lib/net9.0/Npgsql.xml",
+        "npgsql.10.0.2.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
+    "Npgsql.EntityFrameworkCore.PostgreSQL/10.0.1": {
+      "sha512": "P6EwH0Q4xkaA264iNZDqCPhWt8pscfUGxXazDQg4noBfqjoOlk4hKWfvBjF9ZX3R/9JybRmmJfmxr2iBMj0EpA==",
+      "type": "package",
+      "path": "npgsql.entityframeworkcore.postgresql/10.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+        "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.xml",
+        "npgsql.entityframeworkcore.postgresql.10.0.1.nupkg.sha512",
+        "npgsql.entityframeworkcore.postgresql.nuspec",
+        "postgresql.png"
+      ]
+    },
+    "Scalar.AspNetCore/2.13.22": {
+      "sha512": "MN267boY7T3AEHW1mTFDpg4KHF/oiKbox7ue5Orz6/2OeqZHYF1ZQcjBHXGSwxN+lyGSYGL9/i0IRorCYyqw3Q==",
+      "type": "package",
+      "path": "scalar.aspnetcore/2.13.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/Scalar.AspNetCore.dll",
+        "lib/net10.0/Scalar.AspNetCore.xml",
+        "lib/net8.0/Scalar.AspNetCore.dll",
+        "lib/net8.0/Scalar.AspNetCore.xml",
+        "lib/net9.0/Scalar.AspNetCore.dll",
+        "lib/net9.0/Scalar.AspNetCore.xml",
+        "scalar.aspnetcore.2.13.22.nupkg.sha512",
+        "scalar.aspnetcore.nuspec"
+      ]
+    },
     "System.CodeDom/6.0.0": {
       "sha512": "CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",
       "type": "package",
@@ -2301,6 +2417,11 @@
       "type": "project",
       "path": "../Trackr.Domain/Trackr.Domain.csproj",
       "msbuildProject": "../Trackr.Domain/Trackr.Domain.csproj"
+    },
+    "Trackr.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Trackr.Infrastructure/Trackr.Infrastructure.csproj",
+      "msbuildProject": "../Trackr.Infrastructure/Trackr.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2308,7 +2429,9 @@
       "FluentValidation.AspNetCore >= 11.3.1",
       "Microsoft.AspNetCore.OpenApi >= 10.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.5",
-      "Trackr.Application >= 1.0.0"
+      "Scalar.AspNetCore >= 2.13.22",
+      "Trackr.Application >= 1.0.0",
+      "Trackr.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2338,6 +2461,9 @@
           "projectReferences": {
             "/Users/grooyeah/Code/trackr/Trackr/src/Trackr.Application/Trackr.Application.csproj": {
               "projectPath": "/Users/grooyeah/Code/trackr/Trackr/src/Trackr.Application/Trackr.Application.csproj"
+            },
+            "/Users/grooyeah/Code/trackr/Trackr/src/Trackr.Infrastructure/Trackr.Infrastructure.csproj": {
+              "projectPath": "/Users/grooyeah/Code/trackr/Trackr/src/Trackr.Infrastructure/Trackr.Infrastructure.csproj"
             }
           }
         }
@@ -2371,6 +2497,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[10.0.5, )"
+          },
+          "Scalar.AspNetCore": {
+            "target": "Package",
+            "version": "[2.13.22, )"
           }
         },
         "imports": [
