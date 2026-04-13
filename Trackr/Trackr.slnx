@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Trackr.Api/Trackr.Api.csproj" />
+    <Project Path="src/Trackr.Application/Trackr.Application.csproj" />
+    <Project Path="src/Trackr.Domain/Trackr.Domain.csproj" />
+    <Project Path="src/Trackr.Infrastructure/Trackr.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Trackr.Api.Tests/Trackr.Api.Tests.csproj" />
+  </Folder>
+</Solution>
